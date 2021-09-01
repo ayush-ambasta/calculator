@@ -3,6 +3,7 @@ var display=document.getElementById("display");
 var operand1=0;
 var operand2=null;
 var operator=null;
+var result=null;
 
 for(var i=0;i<buttons.length;i++){
     buttons[i].addEventListener('click',function(){
@@ -26,7 +27,7 @@ for(var i=0;i<buttons.length;i++){
             }
             else{
                 if(operator=="%"){
-                    var result=eval("operand1 % operand2");
+                    result=eval("operand1 % operand2");
                     display.innerText=result;
                     operand1=parseFloat(result);
                     operand2=null;
@@ -39,7 +40,7 @@ for(var i=0;i<buttons.length;i++){
                         operand2=null;
                         operand1=0;
                     }else{
-                    var result=eval("operand1 / operand2");
+                    result=eval("operand1 / operand2");
                     display.innerText=result;
                     operand1=parseFloat(result);
                     operand2=null;
@@ -47,21 +48,21 @@ for(var i=0;i<buttons.length;i++){
                     }
                 }
                 if(operator=="x"){
-                    var result=eval("operand1 * operand2");
+                    result=eval("operand1 * operand2");
                     display.innerText=result;
                     operand1=parseFloat(result);
                     operand2=null;
                     operator=null;
                 }
                 if(operator=="+"){
-                    var result=eval("operand1 + operand2");
+                    result=eval("operand1 + operand2");
                     display.innerText=result;
                     operand1=parseFloat(result);
                     operand2=null;
                     operator=null;
                 }
                 if(operator=="-"){
-                    var result=eval("operand1 - operand2");
+                    result=eval("operand1 - operand2");
                     display.innerText=result;
                     operand1=parseFloat(result);
                     operand2=null;
@@ -72,7 +73,7 @@ for(var i=0;i<buttons.length;i++){
         else if(data=="="){
             if(operand2!=null){
                 if(operator=="%"){
-                    var result=eval("operand1 % operand2");
+                    result=eval("operand1 % operand2");
                     display.innerText=result;
                     operand1=parseFloat(result);
                     operand2=null;
@@ -85,7 +86,7 @@ for(var i=0;i<buttons.length;i++){
                         operand2=null;
                         operand1=0;
                     }else{
-                    var result=eval("operand1 / operand2");
+                    result=eval("operand1 / operand2");
                     display.innerText=result;
                     operand1=parseFloat(result);
                     operand2=null;
@@ -93,21 +94,21 @@ for(var i=0;i<buttons.length;i++){
                     }
                 }
                 if(operator=="x"){
-                    var result=eval("operand1 * operand2");
+                    result=eval("operand1 * operand2");
                     display.innerText=result;
                     operand1=parseFloat(result);
                     operand2=null;
                     operator=null;
                 }
                 if(operator=="+"){
-                    var result=eval("operand1 + operand2");
+                    result=eval("operand1 + operand2");
                     display.innerText=result;
                     operand1=parseFloat(result);
                     operand2=null;
                     operator=null;
                 }
                 if(operator=="-"){
-                    var result=eval("operand1 - operand2");
+                    result=eval("operand1 - operand2");
                     display.innerText=result;
                     operand1=parseFloat(result);
                     operand2=null;
@@ -121,7 +122,7 @@ for(var i=0;i<buttons.length;i++){
         }
         else{
             if(operator==null){
-                if(display.innerText==0 || display.innerText=="NOT DEFINE"){
+                if(display.innerText==0 || display.innerText=="NOT DEFINE" || result!=null){
                     display.innerText="";
                 }
                 display.innerText+=data;
@@ -133,6 +134,6 @@ for(var i=0;i<buttons.length;i++){
                 display.innerText+=data;
                 operand2=parseFloat(display.innerText);
             }
-        }
+        } 
     });
 }
