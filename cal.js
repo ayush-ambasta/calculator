@@ -144,6 +144,7 @@ for(var i=0;i<buttons.length;i++){
             if(found==false){
                 if(display.innerText==0 ||display.innerText=="NOT DEFINE" || result!=null){
                     display.innerText="";
+                    result=null;
                  }
                 display.innerText+=data;
             }
