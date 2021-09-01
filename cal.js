@@ -12,6 +12,7 @@ for(var i=0;i<buttons.length;i++){
             operand1=0;
             operand2=null;
             operator=null;
+            result=null;
             display.innerText=0;
         }else if(data=="back"){
             if(display.innerText=="NOT DEFINE"){
@@ -124,6 +125,7 @@ for(var i=0;i<buttons.length;i++){
             if(operator==null){
                 if(display.innerText==0 || display.innerText=="NOT DEFINE" || result!=null){
                     display.innerText="";
+                    result=null;""
                 }
                 display.innerText+=data;
                 operand1=parseFloat(display.innerText);
